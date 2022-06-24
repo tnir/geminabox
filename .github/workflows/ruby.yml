@@ -2,7 +2,6 @@ name: Ruby
 
 on:
   push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -23,6 +22,12 @@ jobs:
             gem-version: 2.7.11
           - ruby-version: 2.5.9
             gem-version: 2.7.11
+          # Test with RubyGems 2.5.2 as RubyGems 2.4 is not supported in Bundler 2.x
+          # Limits to the oldest and newest Ruby 2.x minor versions
+          - ruby-version: 2.2.10
+            gem-version: 2.5.2
+          - ruby-version: 2.7.6
+            gem-version: 2.5.2
 
     steps:
     - uses: actions/checkout@v3
