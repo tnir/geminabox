@@ -23,4 +23,6 @@ group :test do
   end
 
   gem 'webmock'
+
+  gem "rss", require: false
 end
